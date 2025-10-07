@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Montserrat, Nunito_Sans } from 'next/font/google'
+import { Suspense } from 'react'
 
 import Footer from '@/components/footer/footer'
 import Header from '@/components/header/header'
@@ -36,8 +37,10 @@ export default function RootLayout({
       <body
         className={`${nunitoSans.variable} ${montserrat.variable} ${inter.variable}`}
       >
-    <Header />
-    <div className='main'>{children}</div>
+        <Suspense fallback={null}>
+          <Header />
+        </Suspense>
+        <div className='main'>{children}</div>
         <Footer />
       </body>
     </html>
