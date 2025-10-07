@@ -1,0 +1,163 @@
+@import '@/styles/variables';
+@import '@/styles/fonts';
+
+.connect {
+  padding: 54px 200px 146px;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 1750px) {
+    padding: 54px 60px 146px;
+    justify-content: center;
+    gap: 51px;
+  }
+
+  @media (max-width: 1346px) {
+    padding: 1px 40px 90.53px;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  @media (max-width: 800px) {
+    padding: 1px 40px 80.53px;
+  }
+
+  @media (max-width: 656px) {
+    padding: 1px 20px 60px;
+  }
+}
+
+.title {
+  color: $color-white;
+  font-family: 'Big Noodle Titling', Arial, Helvetica, sans-serif;
+  font-size: 119.576px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+
+  @media (max-width: 1346px) {
+    font-size: 100px;
+  }
+
+  @media (max-width: 656px) {
+    font-size: 54px;
+  }
+}
+
+.title > span {
+  background: linear-gradient(90deg, #f5b300 1.44%, #f70 66.83%, #ea5200 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content {
+  max-width: 840px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+
+  @media (max-width: 656px) {
+    gap: 30px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: url(./image/dots1920.png) no-repeat;
+    background-size: 501px 606px;
+    width: 501px;
+    height: 606px;
+    top: -18px;
+    left: calc(50% + -326px);
+    z-index: 2;
+
+    @media (max-width: 1346px) {
+      display: none;
+    }
+  }
+
+  &Item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: 656px) {
+      gap: 12px;
+    }
+
+    &Info {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding-right: 40px;
+
+      @media (max-width: 656px) {
+        gap: 12px;
+        padding-right: 0;
+      }
+
+      &Border {
+        width: 2px;
+        height: 20px;
+        background: #292335;
+      }
+
+      &Text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &Title {
+          font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+          font-feature-settings:
+            'liga' off,
+            'clig' off;
+          color: $color-white;
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 100%;
+
+          @media (max-width: 656px) {
+            font-size: 20px;
+          }
+        }
+
+        &Subtitle {
+          font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+          font-feature-settings:
+            'liga' off,
+            'clig' off;
+          color: $color-white;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%;
+
+          @media (max-width: 656px) {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.link {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}

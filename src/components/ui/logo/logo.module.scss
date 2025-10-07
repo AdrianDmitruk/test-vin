@@ -1,0 +1,32 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.762px 2.153px 1.238px 1.847px;
+  z-index: 101;
+}
+
+.logoImg {
+  display: block;
+}
+
+.logoMobWrap {
+  display: none;
+}
+
+.logoMobImg {
+  display: none;
+}
+
+@media (max-width: 990px) {
+  .logoImg {
+    display: none;
+  }
+  .logoMobWrap {
+    display: inline-block;
+  }
+
+  .logoMobImg {
+    display: block;
+  }
+}

@@ -1,0 +1,50 @@
+@import '@/styles/variables';
+
+.footer {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 39px 200px;
+  z-index: 3;
+  background: #05050a;
+
+  @media (max-width: 1248px) {
+    padding: 59.5px 40px;
+  }
+
+  @media (max-width: 604px) {
+    padding: 40px 20px;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.copy {
+  color: $color-white;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+
+  @media (max-width: 1248px) {
+    max-width: 488px;
+    text-align: center;
+  }
+
+  @media (max-width: 604px) {
+    font-size: 15px;
+    max-width: 318px;
+  }
+}
+
+.linkedin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}

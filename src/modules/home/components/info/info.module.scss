@@ -1,0 +1,87 @@
+@import '@/styles/variables';
+@import '@/styles/fonts';
+
+.info {
+  max-width: 1920px;
+  width: 100%;
+  padding: 1px 200px 66.95px;
+  margin: 0 auto;
+  position: relative;
+
+  @media (max-width: 1650px) {
+    padding: 1px 60px 84.47px;
+  }
+
+  @media (max-width: 1248px) {
+    padding: 1px 40px 95.95px;
+  }
+
+  @media (max-width: 800px) {
+    padding: 1px 40px 129.95px;
+  }
+
+  @media (max-width: 650px) {
+    padding: 1px 20px 87px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 1px 20px 77px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: url(./images/bg1920.png) no-repeat;
+    background-size: 1920px 1141px;
+    width: 1920px;
+    height: 1141px;
+    bottom: 0px;
+    left: calc(50% - -0px);
+    transform: translateX(-50%);
+    z-index: -1;
+
+    @media (max-width: 1500px) {
+      background: url(./images/bg1500.png) no-repeat;
+      background-size: 1500px 1141px;
+      width: 1500px;
+      height: 1141px;
+      bottom: -128px;
+      left: calc(50% - -0px);
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 1000px) {
+      background: url(./images/bg1000.png) no-repeat;
+      background-size: 1000px 1142px;
+      width: 1000px;
+      height: 1142px;
+      bottom: -128px;
+      left: calc(50% - -0px);
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 480px) {
+      background: url(./images/bg480.png) no-repeat;
+      background-size: 481px 1141px;
+      width: 481px;
+      height: 1141px;
+      bottom: -176px;
+      left: calc(50% - -0px);
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.text {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  z-index: 5;
+  color: $color-white;
+  opacity: 0.4;
+
+  @media (max-width: 650px) {
+    font-size: 15px;
+  }
+}
