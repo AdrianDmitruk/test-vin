@@ -1,11 +1,44 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { MouseEvent, useCallback } from 'react'
 
 import styles from './connect.module.scss'
 
 export function Connect() {
+  const handleScrollToConnect = useCallback((e: MouseEvent) => {
+    e.preventDefault()
+
+    const targetId = 'connect'
+    const el = document.getElementById(targetId)
+    if (!el) {
+      // fallback to native hash
+      try {
+        window.location.hash = `#${targetId}`
+      } catch {}
+      return
+    }
+
+    const headerEl = document.querySelector('header') as HTMLElement | null
+    const headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 80
+    const extra = 12
+    const elTop = (el as HTMLElement).offsetTop
+    const targetY = Math.round(elTop - headerHeight - extra)
+
+    // immediate jump so user lands near the target, then Lenis animate if present
+    window.scrollTo({ top: targetY, behavior: 'auto' })
+    const lenis = (
+      window as unknown as Window & {
+        __lenis?: { scrollTo?: (t: number) => void }
+      }
+    ).__lenis
+    if (lenis && typeof lenis.scrollTo === 'function') {
+      lenis.scrollTo(targetY)
+    }
+  }, [])
   return (
-    <section id='connect' className={styles.connect}>
+    <section className={styles.connect}>
       <h2 className={styles.title}>
         Let’s <span>Connect</span>
       </h2>
@@ -36,7 +69,10 @@ export function Connect() {
               <p className={styles.contentItemInfoTextSubtitle}>
                 We’re always looking for strong collaborations. Learn more about
                 partnerships or{' '}
-                <Link className={styles.link} href='#'>
+                <Link
+                  className={styles.link}
+                  href='mailto:vintogroup@gmail.com'
+                >
                   contact
                 </Link>{' '}
                 us with your proposal
@@ -54,10 +90,14 @@ export function Connect() {
               <h5 className={styles.contentItemInfoTextTitle}>Investments</h5>
               <p className={styles.contentItemInfoTextSubtitle}>
                 We provide capital and strategic support for iGaming projects →
-                <Link className={styles.link} href='#'>
+                <a
+                  className={styles.link}
+                  href='#connect'
+                  onClick={handleScrollToConnect}
+                >
                   {' '}
                   Learn more
-                </Link>
+                </a>
               </p>
             </div>
           </div>

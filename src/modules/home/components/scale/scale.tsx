@@ -4,7 +4,7 @@ import styles from './scale.module.scss'
 
 export function Scale() {
   return (
-    <section className={styles.partner}>
+    <section id='connect' className={styles.partner}>
       <div className={styles.content}>
         <h2 className={styles.contentTitle}>
           Scale <span>with US</span>
